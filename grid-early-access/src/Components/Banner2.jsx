@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Image from "next/image";
 import Triangles from "./Triangles";
+import Link from "next/link";
 
 const Banner2 = ({ title, subtitle, subtitle2 }) => {
   const [email, setEmail] = useState(""); // Estado para manejar el valor del input
@@ -36,7 +37,7 @@ const Banner2 = ({ title, subtitle, subtitle2 }) => {
         <div className="tituloBanner">{title}</div>
         <div className="subtituloBanner">{subtitle}</div>
         <div className="subtituloBanner5">{subtitle2}</div>
-        <div className="container-botones2">
+        {/* <div className="container-botones2">
           {isConfirmed ? (
             // Muestra el círculo verde con el tick blanco
             <div className="input-circle">
@@ -52,10 +53,12 @@ const Banner2 = ({ title, subtitle, subtitle2 }) => {
               className="input-email"
             />
           )}
-          <button className="button-landing-5" onClick={handleButtonClick}>
-            {isConfirmed ? "THANK YOU" : "GET EARLY ACCESS"}
+          </div> */}
+          <Link target="blank" href='https://discord.gg/6MVnyBG3'>
+          <button className="button-landing-5">
+            JOIN OUR DISCORD!
           </button>
-        </div>
+          </Link>
       </div>
       <Triangles />
     </div>
