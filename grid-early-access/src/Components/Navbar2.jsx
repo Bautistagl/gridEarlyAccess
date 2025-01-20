@@ -33,50 +33,22 @@ function Navbar2({ scrollToContactForm }) {
 
   return (
     <>
-      <nav className={`navbar2 ${isSticky ? "sticky" : ""}  `}>
+      <nav className={`navbar ${isSticky ? "sticky" : ""}  `}>
         <div className="nav-items">
           <Link href="/">
-            <img className="navbar-logo2" src="/logoLanding.svg" />
+            <img alt="" className="navbar-logo" src="/LogoAlpha.svg" />
           </Link>
+          <div className="login-register">
+            <Link target="_blank" href="https://discord.gg/6MVnyBG3">
+              <button className="boton-landing1">JOIN DISCORD</button>
+            </Link>
+            {/* <Link href="register">
+              <button className="boton-landing">Register</button>
+            </Link> */}
+          </div>
         </div>
       </nav>
-
-      <div
-        className={`container-productos ${dropdown2 ? "show" : ""} ${
-          isSticky ? "sticky" : ""
-        }`}
-        onMouseOver={() => {
-          setDropdown2(true);
-          setDropdown(false);
-        }}
-        onMouseLeave={() => setDropdown2(false)}
-      >
-        <div className="productos">
-          <img alt="" className="logo-productos" src={"/solution.png"} />
-          <div className="descripcion-productos">
-            <Link href="/solutions">
-              <span className="titulo-productos"> Solutions </span>
-            </Link>
-            <span className="subtitulo-productos">
-              {" "}
-              Una descripcion un poco mas larga paraq ver{" "}
-            </span>
-          </div>
-        </div>
-
-        <div className="productos">
-          <img alt="" className="logo-productos" src={"/blog.png"} />
-          <div className="descripcion-productos">
-            <Link href="/aboutUs">
-              <span className="titulo-productos">About us</span>
-            </Link>
-            <span className="subtitulo-productos">
-              {" "}
-              Una descripcion un poco mas larga paraq ver{" "}
-            </span>
-          </div>
-        </div>
-      </div>
+      {menu ? <MenuMobile /> : ""}
     </>
   );
 }

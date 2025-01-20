@@ -22,7 +22,12 @@ const DeployChoiceBeta = () => {
         setFluxData(data);
       } catch (error) {
         console.error("Error fetching Flux data:", error.message);
-        setFluxData(null); // or some default/error state
+        // En lugar de establecer fluxData a null, lo establecemos a un objeto vacío
+        setFluxData({
+          totalSsd: 0,
+          totalRam: 0,
+          totalStorage: 0,
+        });
       }
     };
 

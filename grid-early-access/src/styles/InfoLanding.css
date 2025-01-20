@@ -71,4 +71,13 @@
       width: 100%;
       font-size: 0.8rem;
     }
+    .logos-landing{
+      display: none;
+    }
+    .triangle2, .triangle5, .triangle6, .triangle4, .triangle3, .triangle7, .triangle8{
+      display: none;
+    }
+    .button-landing-5{
+      width: 60% ;
+    }
   }

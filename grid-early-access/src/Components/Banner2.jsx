@@ -1,68 +1,27 @@
-import { useState } from "react";
-
-import Image from "next/image";
-import Triangles from "./Triangles";
 import Link from "next/link";
+import Triangles from "./Triangles";
 
-const Banner2 = ({ title, subtitle, subtitle2 }) => {
-  const [email, setEmail] = useState(""); // Estado para manejar el valor del input
-  const [isConfirmed, setIsConfirmed] = useState(false); // Estado para manejar la confirmación
-
-  // Maneja el cambio de valor del input
-  const handleInputChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  // Maneja el clic en el botón
-  const handleButtonClick = async () => {
-    // if (email.trim() !== "") {
-    //   setIsConfirmed(true); // Cambia el estado a confirmado si el input no está vacío
-    // }
-    try {
-      await fetch("/api/email-send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
+const Banner = ({ title, subtitle, subtitle2 }) => {
   return (
     <div className="banner-container">
-      <div className="textosBanner2">
+      <div className="textosBanner">
         <div className="tituloBanner">{title}</div>
         <div className="subtituloBanner">{subtitle}</div>
-        <div className="subtituloBanner5">{subtitle2}</div>
-        {/* <div className="container-botones2">
-          {isConfirmed ? (
-            // Muestra el círculo verde con el tick blanco
-            <div className="input-circle">
-              <Image alt="" src="/check.png" width={30} height={30} />
-            </div>
-          ) : (
-            // Muestra el input y permite escribir
-            <input
-              type="email"
-              placeholder="Email:"
-              value={email}
-              onChange={handleInputChange}
-              className="input-email"
-            />
-          )}
-          </div> */}
-          <Link target="blank" href='https://discord.gg/6MVnyBG3'>
-          <button className="button-landing-5">
-            JOIN OUR DISCORD!
+        <div className="subtituloBanner2">{subtitle2}</div>
+        <div className="container-botones">
+          {" "}
+          <button className="button-landing-1">
+            {" "}
+            <Link target="_blank" href="https://discord.gg/6MVnyBG3">
+              JOIN OUR DISCORD!{" "}
+            </Link>
           </button>
-          </Link>
+          {/* <button className="button-landing-2">BOOK A DEMO</button> */}
+        </div>
       </div>
       <Triangles />
     </div>
   );
 };
 
-export default Banner2;
+export default Banner;

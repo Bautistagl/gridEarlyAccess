@@ -45,3 +45,12 @@ button {
     -o-transform: skewX(-20deg);
     transform: skewX(-20deg);
   }
+  .container-homePrincipal{
+    background-image: url('/UltimoFondo.png');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    min-height: 100vh;
+  }
